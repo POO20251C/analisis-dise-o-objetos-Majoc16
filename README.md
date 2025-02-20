@@ -60,32 +60,32 @@ direction TB
 classDiagram
     direction TB
     class Escuela {
-        -list cursos
-        -list estudiantes
-        -list inscripcion <inscripcion>
+        -List cursos
+        -List estudiantes
+        -List inscripciones
         +registrarEstudiante()
         +registrarCursos()
         +crearInscripciones()
         +RegistrarEstadosCursos()
-        +listarestudiantes(): list <Estudiante>
+        +listarEstudiantes(): List<Estudiante>
         +listarCursos(): List<Curso>
-        +listarInscripciones(): list <Inscripcion>
+        +listarInscripciones(): List<Inscripcion>
     }
 
     class Curso {
         -String nombre
         -int duracion
-        -list inscripcion <inscripcion>
+        -list inscripcion 
         +getduracion()
         +setduracion()
     }
 
     class Estudiante {
         -string id 
-        -list cursos <Curso>
+        -list cursos
         +listarCursos(): List<Curso>
-        +gets()
-        +sets()
+        +get()
+        +set()
         +cursosPresenta()
     }
 
@@ -95,8 +95,8 @@ classDiagram
         -Boolean estado
         -Date fechainscripcion
         +registrarEstudiante()
-        +gets()
-        +sets()
+        +get()
+        +set()
         +registrarCurso()
         +registrarFecha()
     }
@@ -104,10 +104,10 @@ classDiagram
     
     Estudiante "1" --o "many" Curso: participan
     Escuela "1" --o "many" Estudiante: tiene
-    Escuela "1" --o "many" Curso: tiene
+    Escuela "1" --o "many" Curso: ofrece
     Estudiante "1"  --o "many" Inscripcion: puede tener
     Inscripcion "1" --> "1" Estudiante: tiene
     Inscripcion "1" --> "1" Curso: correponde a
     Curso "1" --o "many" Inscripciones: tiene
 
-
+    
