@@ -9,3 +9,21 @@ Por ultimo, las relaciones:
 3.  A pesar de que citas solo pueda atender a 1 mascota, las mascotas pueden tener mas de una cita en rangos de tiempos, por eso las dos relacioneshechas en el diagrama
 4. La relación entre la clase Clínica y Mascota era necesaria en la jerarquía, al principio  no estaba segura, pero considero que es importante incluirla porque es una de las relaciones más generales
  en el sistema, y eso es que la clinica puede atender a varias mascotas. Además, esta relación permite que sigan las otras relaciones: Las mascotas puedan tener citas dentro de la clínica
+
+#diagrama de clase musica 
+En este diagrama hay 4 clases: Escuela, Curso, Estudiante e Inscripción. Aunque la escuela podría parecer innecesaria, la dejé porque es el centro de todo el sistema.
+
+Las relaciones las organice de esta manera:
+- Escuela tiene varios Estudiantes y ofrece varios Cursos.
+- Estudiantes pueden inscribirse en varios cursos y un curso tiene varios estudiantes.
+- Inscripción conecta a estudiantes y cursos porque no todos los estudiantes toman los mismos cursos al mismo tiempo.
+- Cada inscripción pertenece a un estudiante y un curso.
+- Sobre los atributos y métodos:
+Tambien: 
+Usé List en Escuela porque maneja varios datos.
+De nuevo el simbolo de privado (-) para atributos
+Métodos como registrarEstudiante() y listarCursos() son clave para manejar la informacion y sus estados
+En Inscripción, puse estado (booleano) para saber si sigue activa o se completo el curso y fechainscripcion para tener registro.
+
+Las clases en mayúscula porque son entidades principales.
+Al principio dudé si Escuela debía conectarse con Inscripción, pero vi que no era necesario porque la relación se da a través de los estudiantes. Con esto, el sistema queda claro y organizado. 
