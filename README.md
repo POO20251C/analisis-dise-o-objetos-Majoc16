@@ -53,6 +53,7 @@ direction TB
     Cita "1" --> "1" Mascota : Atiende
     Clinica "1" --o "many" Dueno : Tiene
     Clinica "1" --o "many" Mascota : Atiende
+```
 
 #Diagrama UML- clases de musica 
 
