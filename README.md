@@ -66,11 +66,11 @@ classDiagram
         -List inscripciones
         +registrarEstudiante()
         +registrarCursos()
-        +crearInscripciones()
+        +registrarInscripcion()
         +RegistrarEstadosCursos()
         +listarEstudiantes(): List<Estudiante>
         +listarCursos(): List<Curso>
-        +listarInscripciones(): List<Inscripcion>
+        +listarInscripcion(): List<Inscripcion>
     }
 
     class Curso {
@@ -109,6 +109,6 @@ classDiagram
     Estudiante "1"  --o "many" Inscripcion: puede tener
     Inscripcion "1" --> "1" Estudiante: tiene
     Inscripcion "1" --> "1" Curso: correponde a
-    Curso "1" --o "many" Inscripciones: tiene
+    Curso "1" --o "many" Inscripcion: tiene
 
     
