@@ -54,4 +54,60 @@ direction TB
     Clinica "1" --o "many" Dueno : Tiene
     Clinica "1" --o "many" Mascota : Atiende
 
+#Diagrama UML- clases de musica 
+
+```mermaid
+classDiagram
+    direction TB
+    class Escuela {
+        -list cursos
+        -list estudiantes
+        -list inscripcion <inscripcion>
+        +registrarEstudiante()
+        +registrarCursos()
+        +crearInscripciones()
+        +RegistrarEstadosCursos()
+        +listarestudiantes(): list <Estudiante>
+        +listarCursos(): List<Curso>
+        +listarInscripciones(): list <Inscripcion>
+    }
+
+    class Curso {
+        -String nombre
+        -int duracion
+        -list inscripcion <inscripcion>
+        +getduracion()
+        +setduracion()
+    }
+
+    class Estudiante {
+        -string id 
+        -list cursos <Curso>
+        +listarCursos(): List<Curso>
+        +gets()
+        +sets()
+        +cursosPresenta()
+    }
+
+    class Inscripcion {
+        -String curso 
+        -String estudiante
+        -Boolean estado
+        -Date fechainscripcion
+        +registrarEstudiante()
+        +gets()
+        +sets()
+        +registrarCurso()
+        +registrarFecha()
+    }
+
+    
+    Estudiante "1" --o "many" Curso: participan
+    Escuela "1" --o "many" Estudiante: tiene
+    Escuela "1" --o "many" Curso: tiene
+    Estudiante "1"  --o "many" Inscripcion: puede tener
+    Inscripcion "1" --> "1" Estudiante: tiene
+    Inscripcion "1" --> "1" Curso: correponde a
+    Curso "1" --o "many" Inscripciones: tiene
+
 
